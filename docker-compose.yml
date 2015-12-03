@@ -1,0 +1,6 @@
+dev:
+    build: .
+    volumes:
+        - ./etc:/etc/letsencrypt
+    working_dir: /letsencrypt
+    entrypoint: ./letsencrypt-auto certonly --agree-tos --standalone --email admin@thing.com -d thing.com -d www.thing.com -d otherthing.net
